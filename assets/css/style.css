@@ -1,7 +1,9 @@
     body {
         background-color:yellow;
+
         /* Full height */
         height: 100%;
+        
         /* Center and scale*/
         background-position: center;
         background-repeat: no-repeat;
@@ -23,5 +25,5 @@
     }
     
     .content{
-      padding:20px;
+        padding:20px;
     }
