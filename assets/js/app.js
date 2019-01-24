@@ -75,6 +75,11 @@ function getEventsByLocationId(thisLocationId) {
 
         for (e=0; e< eventArray.length; e++) {
             console.log(eventArray[e].displayName);
+
+            
+
+            $("#full-event-list").append("<tr class='well'><td class='event-name'>" + eventArray[e].displayName + "</td></tr>");
+
         }
 
     }).catch(
