@@ -1,4 +1,4 @@
-his is a branch from the master, with a pseudocode file
+This is a branch from the master, with a pseudocode file
 
 in pseudo.js , on the main folder page, there are comments written out to expalin what is happening on the backend
 
