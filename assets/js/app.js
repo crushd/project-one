@@ -69,7 +69,41 @@ function getEventsByLocationId(thisLocationId) {
 
     }).then(function(response) {
 
-        console.log(response.resultsPage.results.event);
+        //console.log(response.resultsPage.results.event);
+
+        var eventArray = response.resultsPage.results.event;
+
+        for (e=0; e< eventArray.length; e++) {
+            console.log(eventArray[e].displayName);
+        }
+
+    }).catch(
+        function(error){
+            console.log(error)
+        }
+    )
+
+}
+
+function getArtistId(artistName) {
+
+    
+    var queryUrl = "https://api.songkick.com/api/3.0/search/artists.json?query="+ artistName + "&apikey=" + songkickApiKey;
+    
+    $.ajax({
+            
+        url: queryUrl,
+        method:"GET"
+
+    }).then(function(response) {
+
+        //console.log(response.resultsPage.results.artist);
+
+        var artistArray = response.resultsPage.results.artist;
+
+        for (a=0; a < artistArray.length; a++) {
+            console.log(artistArray[a].id + ": " + artistArray[a].displayName);
+        }
 
     }).catch(
         function(error){
