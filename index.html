@@ -60,11 +60,11 @@
             <form>
                 <div class="form-row">
                   <div class="col-7">
-                    <input type="text" class="form-control" placeholder="City, State">
+                    <input type="text" class="form-control" placeholder="City, State" id="search-field">
                   </div>
                 </div>
             <br>
-                <button type="button" class="btn btn-secondary">Search</button>
+                <button type="button" class="btn btn-secondary" id="search-button">Search</button>
               </form>
            <br>
         
@@ -75,16 +75,19 @@
                 <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
             </p-->
 
-            <table class="table" id="event-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Event Name</th>
-                    </tr>
-                </thead>
-                <tbody id="full-event-list"></tbody>
-            </table>
-
         </div>
+
+        <table class="table" id="event-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th scope="col">Event Name</th>
+                    <th>Venue</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody id="full-event-list"></tbody>
+        </table>
 
         <div>
 
