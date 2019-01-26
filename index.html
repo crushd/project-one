@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Project One</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,48 +9,52 @@
 
     <!-- Reset CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
-    
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
     <!-- Our Style -->
     <link rel="stylesheet" href="assets/css/style.css">
-   
 
-  </head>
-  <body>
+
+</head>
+
+<body>
 
     <div class="container-fluid">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Project One</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Group Members
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Amy Biltz</a>
-                    <a class="dropdown-item" href="#">Cody Rush</a>
-                    <a class="dropdown-item" href="#">Chris Wolberg</a>
-                    <a class="dropdown-item" href="#">Isabel Ammann</a>
-                    <!--div class="dropdown-divider"></div>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Group Members
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Amy Biltz</a>
+                            <a class="dropdown-item" href="#">Cody Rush</a>
+                            <a class="dropdown-item" href="#">Chris Wolberg</a>
+                            <a class="dropdown-item" href="#">Isabel Ammann</a>
+                            <!--div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a-->
-                    </div>
-                </li>
+                        </div>
+                    </li>
 
-                </form>
+                    </form>
             </div>
         </nav>
 
@@ -59,21 +64,52 @@
             <p>Find Events Near You!</p>
             <form>
                 <div class="form-row">
-                  <div class="col-7">
-                    <input type="text" class="form-control" placeholder="City, State" id="search-field">
-                  </div>
+                    <div class="col-7">
+                        <input type="text" id="search-field" class="form-control" placeholder="City, State">
+                        <br>
+                        <button type="button" id="search-button" class="btn btn-secondary">Search</button>
+                    </div>
                 </div>
-            <br>
-                <button type="button" class="btn btn-secondary" id="search-button">Search</button>
-              </form>
-           <br>
-        
-            <p class="lead">Event Map?</p>
-            <hr class="my-2">
-            <p>More info</p>
-            <!--p class="lead">
+            </form>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-7">
+                <p class="lead">Event Map?</p>
+                <hr class="my-2">
+                <p>More info</p>
+                <table class="table" id="event-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Event Name</th>
+                        </tr>
+                    </thead>
+                    <tbody id="full-event-list"></tbody>
+                </table>
+            </div>
+            <div id="sec2" class="col">
+                <div class="card">
+                        <img id="image" src="https://www.lifewire.com/thmb/dF-kkkDsTUWlGqtMTD_SSMWZgDY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-552756957-59dbd9cbd088c00010260068.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Events Near You</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in
+                                to additional content. This card has even longer content than the first to show
+                                that
+                                equal height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>  
+             
+        <br>
+
+
+        <!--p class="lead">
                 <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
             </p-->
+
 
         </div>
 
@@ -92,21 +128,25 @@
         <div>
 
 
+    <div>
 
-        </div>
 
 
     </div>
-      
+
+
+    </div>
+
     <!-- Resources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="assets/js/app.js"></script>
 
-  </body>
+</body>
 
 
-    <!--
+<!--
         Project Requirements
         * Must use at least two APIs
         * Must use AJAX to pull data

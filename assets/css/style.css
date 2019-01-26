@@ -1,7 +1,16 @@
-body{
-    background: url("http://fanfest.com/wp-content/uploads/2016/03/6358450564487924171460073690_concert-audience.jpg") no-repeat center center fixed;
+.jumbotron{
+    background: url("http://fanfest.com/wp-content/uploads/2016/03/6358450564487924171460073690_concert-audience.jpg") no-repeat center bottom fixed;
 }
 
 #event-table {
     background-color:#efefef;
+}
+#sec2 {
+    padding: 20px;
+}
+#image {
+    height: 300px;
+    width: 500px;
+    align-content: center;
+    padding: 10px;
 }
