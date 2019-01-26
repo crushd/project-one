@@ -13,6 +13,7 @@ body {
 
 .jumbotron{
     background:none;
+    text-align:center;
     /*background: url("http://fanfest.com/wp-content/uploads/2016/03/6358450564487924171460073690_concert-audience.jpg") no-repeat center center;*/
 }
 
@@ -21,13 +22,9 @@ body {
 }
 
 #event-table {
-    background-color:#efefef;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.95);
 }
-
-#event-table td {
-    opacity: .5;
-}
-
 
 #sec2 {
     padding: 20px;
