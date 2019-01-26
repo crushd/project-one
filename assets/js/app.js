@@ -50,7 +50,7 @@ function getLocationId(query) {
                 
                 //$("#full-event-list").append("<tr class='well'><td class='location-name'><a href='#' id='location-link' onclick='"+ getEventsByLocationId(locationArray[i].metroArea.id) + "'>" + locationMetro + ", " +  locationMetroState + "</a></td></tr>");
                 getEventsByLocationId(locationArray[i].metroArea.id)
-                
+
             }
 
         }
@@ -123,11 +123,26 @@ function getArtistId(artistName) {
 
 }
 
-$("#search-button").on("click", function() {
+/* $("#search-button").on("click", function() {
 
     var searchValue = $("#search-field").val().trim();
     console.log(searchValue);
 
     getLocationId(searchValue);
 
-})
+}) */
+
+
+
+$('document').ready(function(){
+    $('#search-button').click(function(){
+        var searchValue = $("#search-field").val().trim();
+        getLocationId(searchValue);        
+    })
+    $('#search-field').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#search-button').click();//Trigger search button click event
+        }
+    });
+
+});
