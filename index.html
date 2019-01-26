@@ -65,9 +65,9 @@
             <form>
                 <div class="form-row">
                     <div class="col-7">
-                        <input type="text" class="form-control" placeholder="City, State">
+                        <input type="text" id="search-field" class="form-control" placeholder="City, State">
                         <br>
-                        <button type="button" class="btn btn-secondary">Search</button>
+                        <button type="button" id="search-button" class="btn btn-secondary">Search</button>
                     </div>
                 </div>
             </form>
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>  
-        
+             
         <br>
 
 
@@ -111,8 +111,22 @@
             </p-->
 
 
+        </div>
 
-    </div>
+        <table class="table" id="event-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th scope="col">Event Name</th>
+                    <th>Venue</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody id="full-event-list"></tbody>
+        </table>
+
+        <div>
+
 
     <div>
 
