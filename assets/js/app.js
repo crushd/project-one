@@ -142,6 +142,8 @@ $('document').ready(function(){
     $('#search-field').keypress(function(e){
         if(e.which == 13){//Enter key pressed
             $('#search-button').click();//Trigger search button click event
+            e.preventDefault;
+            return false;
         }
     });
 
