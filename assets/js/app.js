@@ -3,28 +3,7 @@ var songkickApiKey = "XFK6hX8iZ4LjPg6l";
 var thisMinDate = moment().format("YYYY-MM-DD");
 var thisLocationId;
 
-
-
-function eventfulCall() {
-
-    var queryURL = "http://api.eventful.com/json/events/search?";
-    var appKey = "ZsBNvKB3vPZxBcL9";
-
-        $.ajax({
-            
-            url: queryURL + "app_key=" + appKey + "&q=San+Diego",
-            method:"GET"
-
-        }).then(function(response) {
-
-            console.log(response);
-
-        })
-    
-}
-
 function getLocationId(query) {
-    //var getRidofSpacesInQuery = query.split(" ").join("") 
 
     var queryUrl = "https://api.songkick.com/api/3.0/search/locations.json?query=" + query + "&apikey=" + songkickApiKey;
     console.log("queryURL",queryUrl)
@@ -48,7 +27,6 @@ function getLocationId(query) {
                 var locationMetroState = locationArray[i].metroArea.state.displayName;
                 console.log(locationArray[i].metroArea.id + ": " + locationMetro + ", " + locationMetroState);
                 
-                //$("#full-event-list").append("<tr class='well'><td class='location-name'><a href='#' id='location-link' onclick='"+ getEventsByLocationId(locationArray[i].metroArea.id) + "'>" + locationMetro + ", " +  locationMetroState + "</a></td></tr>");
                 getEventsByLocationId(locationArray[i].metroArea.id)
 
             }
@@ -122,17 +100,6 @@ function getArtistId(artistName) {
     )
 
 }
-
-/* $("#search-button").on("click", function() {
-
-    var searchValue = $("#search-field").val().trim();
-    console.log(searchValue);
-
-    getLocationId(searchValue);
-
-}) */
-
-
 
 $('document').ready(function(){
     $('#search-button').click(function(){
