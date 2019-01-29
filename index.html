@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Project One</title>
+    <title>Find Events Near You!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Our Style -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -21,8 +20,6 @@
 </head>
 
 <body>
-
-    <div class="container-fluid">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Project One</a>
@@ -49,90 +46,68 @@
                             <a class="dropdown-item" href="#">Cody Rush</a>
                             <a class="dropdown-item" href="#">Chris Wolberg</a>
                             <a class="dropdown-item" href="#">Isabel Ammann</a>
-                            <!--div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a-->
                         </div>
                     </li>
-
-                    </form>
+                </ul>
             </div>
         </nav>
 
-        <div class="jumbotron">
-            <h1 class="display-3">Project One</h1>
+    <div class="container-fluid">
 
-            <p>Find Events Near You!</p>
+        <div class="jumbotron">
+            <h1 class="display-3">Find Events Near You!</h1>
+
+            <!--p>Find Events Near You!</p-->
             <form>
-                <div class="form-row">
-                    <div class="col-7">
-                        <input type="text" id="search-field" class="form-control" placeholder="City, State">
+                <div class="form-row justify-content-md-center">
+                    <div class="col-8 text-center">
+                        <input type="text" id="search-field" class="form-control text-center" placeholder="City, State">
                         <br>
                         <button type="button" id="search-button" class="btn btn-secondary">Search</button>
                     </div>
                 </div>
             </form>
         </div>
-        <br>
+
+        
         <div class="row">
-            <div class="col-7">
-                <p class="lead">Event Map?</p>
-                <hr class="my-2">
-                <p>More info</p>
+            <div class="col-7">           
+                <table class="table" id="event-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th scope="col">Event Name</th>
+                            <th>Venue</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+                    <tbody id="full-event-list"></tbody>
+                </table>
             </div>
+
             <div id="sec2" class="col">
                 <div class="card">
-                        <img id="image" src="https://www.lifewire.com/thmb/dF-kkkDsTUWlGqtMTD_SSMWZgDY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-552756957-59dbd9cbd088c00010260068.jpg"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Events Near You</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in
-                                to additional content. This card has even longer content than the first to show
-                                that
-                                equal height action.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <img id="image" src="https://www.lifewire.com/thmb/dF-kkkDsTUWlGqtMTD_SSMWZgDY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-552756957-59dbd9cbd088c00010260068.jpg" class="card-img-top" alt="...">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Events Near You</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-in
+                            to additional content. This card has even longer content than the first to show
+                            that
+                            equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
-            </div>
-        </div>  
-             
-        <br>
-
-
-        <!--p class="lead">
-                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-            </p-->
-
-
+            </div>  
         </div>
-
-        <table class="table" id="event-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th scope="col">Event Name</th>
-                    <th>Venue</th>
-                    <th>City</th>
-                </tr>
-            </thead>
-            <tbody id="full-event-list"></tbody>
-        </table>
-
-        <div>
-
-
-    <div>
-
-
-
-    </div>
-
 
     </div>
 
     <!-- Resources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="assets/js/moment.js"></script>
     <script src="assets/js/app.js"></script>
 
 </body>

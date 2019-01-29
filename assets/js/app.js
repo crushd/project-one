@@ -1,30 +1,9 @@
 var projectTitle = "Project One";
 var songkickApiKey = "XFK6hX8iZ4LjPg6l";
+var thisMinDate = moment().format("YYYY-MM-DD");
 var thisLocationId;
 
-
-
-function eventfulCall() {
-
-    var queryURL = "http://api.eventful.com/json/events/search?";
-    var appKey = "ZsBNvKB3vPZxBcL9";
-
-        $.ajax({
-            
-            url: queryURL + "app_key=" + appKey + "&q=San+Diego",
-            method:"GET"
-
-        }).then(function(response) {
-
-            console.log(response);
-
-        })
-    
-}
-
 function getLocationId(query) {
-    //var getRidofSpacesInQuery = query.split(" ").join("") 
-
 
     var queryUrl = "https://api.songkick.com/api/3.0/search/locations.json?query=" + query + "&apikey=" + songkickApiKey;
     console.log("queryURL",queryUrl)
@@ -48,7 +27,7 @@ function getLocationId(query) {
                 var locationMetroState = locationArray[i].metroArea.state.displayName;
                 console.log(locationArray[i].metroArea.id + ": " + locationMetro + ", " + locationMetroState);
                 
-                $("#full-event-list").append("<tr class='well'><td class='location-name'><a href='#' id='location-link' onclick='"+ getEventsByLocationId(locationArray[i].metroArea.id) + "'>" + locationMetro + ", " +  locationMetroState + "</a></td></tr>");
+                getEventsByLocationId(locationArray[i].metroArea.id)
 
             }
 
@@ -65,7 +44,7 @@ function getLocationId(query) {
 function getEventsByLocationId(thisLocationId) {
 
     
-    var queryUrl = "https://api.songkick.com/api/3.0/metro_areas/"+ thisLocationId + "/calendar.json?apikey=" + songkickApiKey;
+    var queryUrl = "https://api.songkick.com/api/3.0/metro_areas/"+ thisLocationId + "&min_date=" + thisMinDate + "&max_date=" + moment(thisMinDate).add(60, 'days').format("YYYY-MM-DD") + "/calendar.json?apikey=" + songkickApiKey;
     console.log(queryUrl);
 
     $.ajax({
@@ -82,9 +61,7 @@ function getEventsByLocationId(thisLocationId) {
         for (e=0; e< eventArray.length; e++) {
             console.log(eventArray[e].displayName);
 
-            
-
-            $("#full-event-list").append("<tr class='well'><td>"+ eventArray[e].start.date  +"</td><td class='event-name'>" + eventArray[e].performance[0].displayName + "</td><td>" + eventArray[e].venue.displayName +"</td><td>"+ eventArray[e].location.city +"</td></tr>");
+            $("#full-event-list").append("<tr class='well'><td>"+ moment(eventArray[e].start.date).format("MMM Do YYYY")  +"</td><td class='event-name'>" + eventArray[e].performance[0].displayName + "</td><td>" + eventArray[e].venue.displayName +"</td><td>"+ eventArray[e].location.city +"</td></tr>");
 
         }
 
@@ -124,11 +101,17 @@ function getArtistId(artistName) {
 
 }
 
-$("#search-button").on("click", function() {
+$('document').ready(function(){
+    $('#search-button').click(function(){
+        var searchValue = $("#search-field").val().trim();
+        getLocationId(searchValue);        
+    })
+    $('#search-field').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#search-button').click();//Trigger search button click event
+            e.preventDefault;
+            return false;
+        }
+    });
 
-    var searchValue = $("#search-field").val().trim();
-    console.log(searchValue);
-
-    getLocationId(searchValue);
-
-})
+});
