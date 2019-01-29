@@ -1,6 +1,7 @@
 var projectTitle = "Project One";
 var songkickApiKey = "XFK6hX8iZ4LjPg6l";
 var thisMinDate = moment().format("YYYY-MM-DD");
+var todayDate = moment().format();
 var thisLocationId;
 
 function getLocationId(query) {
@@ -62,18 +63,18 @@ function getEventsByLocationId(thisLocationId) {
 
         for (e=0; e< eventArray.length; e++) {
             console.log(eventArray[e].displayName);
+            var eventStartDate = eventArray[e].start.date;
             var artistURI = eventArray[e].performance[0].artist.uri;
             var eventURI = eventArray[e].uri;
             var venueURI = eventArray[e].venue.uri;
             var metroURI = eventArray[e].venue.metroArea.uri;
             //console.log(eventArray[e].uri);
 
-            $("#full-event-list").append("<tr class='well'><td class='event-date'>"+ moment(eventArray[e].start.date).format("MMM Do YYYY")  +"</td><td>" + "<a class='event-name' href='"+artistURI+"' target='_blank'>" + eventArray[e].performance[0].displayName + "</a>" + "</td><td>" + "<a class='event-venue' href='"+venueURI+"' target='_blank'>" + eventArray[e].venue.displayName +"</a></td><td>" + "<a class='event-metro' href='"+metroURI+"' target='_blank'>" + eventArray[e].location.city +"</a></td><td><a href='"+eventURI+"' class='btn btn-primary event-details' target='_blank'>Details</a></td></tr>");
+            //console.log(moment(eventStartDate).diff(todayDate,"days"));
 
-            /* var item = $('<div>').addClass('card'),
-                //title = $('<div>').addClass('card-title'),
-                body = $('<div>').addClass('card-body'); */
-
+            if (moment(eventStartDate).diff(todayDate,"days") >= 0) {
+                $("#full-event-list").append("<tr class='well'><td class='event-date'>"+ moment(eventStartDate).format("MMM Do YYYY")  +"</td><td>" + "<a class='event-name' href='"+artistURI+"' target='_blank'>" + eventArray[e].performance[0].displayName + "</a>" + "</td><td>" + "<a class='event-venue' href='"+venueURI+"' target='_blank'>" + eventArray[e].venue.displayName +"</a></td><td>" + "<a class='event-metro' href='"+metroURI+"' target='_blank'>" + eventArray[e].location.city +"</a></td><td><a href='"+eventURI+"' class='btn btn-primary event-details' target='_blank'>Details</a></td></tr>");
+            }
         }
 
     }).catch(
