@@ -1,7 +1,12 @@
 TODO:
-Change title of project
-Style the weather API stuff
-fulfill " Must utilize at least one new library or technology that we haven't discussed" via fontawesome api and throw icons etc.
+
+1. Change title of project
+
+2. Style the weather API stuff
+
+3. Fulfill " Must utilize at least one new library or technology that we haven't discussed" via fontawesome api and throw icons etc.
+
+In this branch, i did the following...
 
 Fixed enter button bug
 
