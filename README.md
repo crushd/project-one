@@ -10,7 +10,7 @@ In this branch, i did the following...
 
 Fixed enter button bug
 
-added more validation to input
+added validation to input
 
 added weather api built by amy
 
