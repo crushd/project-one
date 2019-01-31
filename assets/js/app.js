@@ -54,7 +54,7 @@ function getEventsByLocationId(thisLocationId) {
             //console.log(eventArray[e].uri);
             //console.log(moment(eventStartDate).diff(todayDate,"days"));
             if (moment(eventStartDate).diff(todayDate, "days") >= 0) {
-                $("#full-event-list").append("<tr class='well'><td class='event-date'>" + moment(eventStartDate).format("MMM Do YYYY") + "</td><td>" + "<a class='event-name' href='" + artistURI + "' target='_blank'>" + eventArray[e].performance[0].displayName + "</a>" + "</td><td>" + "<a class='event-venue' href='" + venueURI + "' target='_blank'>" + eventArray[e].venue.displayName + "</a></td><td>" + "<a class='event-metro' href='" + metroURI + "' target='_blank'>" + eventArray[e].location.city + "</a></td><td><a href='" + eventURI + "' class='btn btn-primary event-details' target='_blank'>Details</a></td></tr>");
+                $("#full-event-list").append("<tr class='well'><td class='event-date'>" + moment(eventStartDate).format("MMM Do YYYY") + "</td><td>" + "<a class='event-name' href='" + artistURI + "' target='_blank'>" + eventArray[e].performance[0].displayName + "</a>" + "</td><td>" + "<a class='event-venue' href='" + venueURI + "' target='_blank'>" + eventArray[e].venue.displayName + "</a></td><td>" + "<a class='event-metro' href='" + metroURI + "' target='_blank'>" + eventArray[e].location.city + "</a></td><td><a href='" + eventURI + "' class='btn btn-primary event-details' target='_blank'><i class='fas fa-info-circle'></i> Details</a></td></tr>");
             }
         }
     }).catch(
@@ -160,7 +160,7 @@ $('document').ready(function () {
                 //var latitude = position.coords.latitude;
                 //var longitude = position.coords.longitude;
                 //console.log(cityWeather);
-                $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+cityWeather+ "&appid=36afb39cb4f0ee933b92b0443aa4a8af",
+                $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+cityWeather+ "&appid=36afb39cb4f0ee933b92b0443aa4a8af",
                 //$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" 
                 //+ latitude + "&lon=" + longitude + "&appid=36afb39cb4f0ee933b92b0443aa4a8af", 
                 
@@ -173,7 +173,7 @@ $('document').ready(function () {
                     //to show current condition
                     var cel = Math.round(a.main.temp - 273);
                     $('#location').html(a.name + ", " + a.sys.country);
-                    $('#weather').html('<img src =' + "http://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
+                    $('#weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
                     $('#temp').html(cel);
                     $('#mic').html("Humidity " + a.main.humidity + "%");
 
