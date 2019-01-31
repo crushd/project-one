@@ -41,6 +41,9 @@ function getEventsByLocationId(thisLocationId) {
         url: queryUrl,
         method: "GET"
     }).then(function (response) {
+
+        $('#resultsContainer').show();
+
         //console.log(response.resultsPage.results.event);
         var eventArray = response.resultsPage.results.event;
         // container = $('#documents');
@@ -120,6 +123,7 @@ function getArtistId(artistName) {
 
 $('document').ready(function () {
 
+    $('#resultsContainer').hide();
     $('#weatherBox').hide();
 
     $('#search-button').click(function () {
