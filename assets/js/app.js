@@ -119,6 +119,9 @@ function getArtistId(artistName) {
 }
 
 $('document').ready(function () {
+
+    $('#weatherBox').hide();
+
     $('#search-button').click(function () {
         
         
@@ -169,12 +172,15 @@ $('document').ready(function () {
                     var current = $.now();
                     var maxDate = new Date(current);
                     var isoDate = maxDate.toString();
-                    $('#date').html(isoDate);
+
+                    $('#weatherBox').show();
+
+                    $('#date').html(moment(isoDate).format("MMMM D, YYYY"));
                     //to show current condition
                     var cel = Math.round(a.main.temp - 273);
                     $('#location').html(a.name + ", " + a.sys.country);
                     $('#weather').html('<img src =' + "https://openweathermap.org/img/w/" + a.weather[0].icon + ".png" + '>' + a.weather[0].description);
-                    $('#temp').html(cel);
+                    $('#temp').html("Temp: " + Math.round(cel * 1.8 + 32) + " F / " + cel + " C");
                     $('#mic').html("Humidity " + a.main.humidity + "%");
 
                     //to change Celsius to Fahrenheit

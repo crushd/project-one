@@ -39,3 +39,8 @@ body {
 tr.well a.event-date, a.event-name, a.event-venue, a.event-metro {
     color:black;
 }
+
+#weatherBox {
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.85);
+}
