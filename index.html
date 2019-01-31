@@ -11,46 +11,46 @@
     <link rel="stylesheet" href="assets/css/reset.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
     <!-- Our Style -->
     <link rel="stylesheet" href="assets/css/style.css">
-
 
 </head>
 
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Project One</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Project One</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Group Members
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Amy Biltz</a>
-                            <a class="dropdown-item" href="#">Cody Rush</a>
-                            <a class="dropdown-item" href="#">Chris Wolberg</a>
-                            <a class="dropdown-item" href="#">Isabel Ammann</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Group Members
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Amy Biltz</a>
+                        <a class="dropdown-item" href="#">Cody Rush</a>
+                        <a class="dropdown-item" href="#">Chris Wolberg</a>
+                        <a class="dropdown-item" href="#">Isabel Ammann</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container-fluid">
 
@@ -61,7 +61,8 @@
             <form>
                 <div class="form-row justify-content-md-center">
                     <div class="col-8 text-center">
-                        <input type="text" id="search-field" class="form-control text-center" placeholder="City, State">
+                        <input type="text" id="search-field" class="form-control text-center" placeholder="Enter City, State">
+                        <div id ="error-box"></div>
                         <br>
                         <button type="button" id="search-button" class="btn btn-secondary">Search</button>
                     </div>
@@ -69,9 +70,17 @@
             </form>
         </div>
 
-        
+        <div class= "weather">
+            <div id= "date"></div>
+            <div id= "location"></div>
+            <div id= "weather"></div>
+            <div id= "temp"></div>
+        </div>
+    
+
+
         <div class="row">
-            <div class="col-7">           
+            <div class="col-7">
                 <table class="table" id="event-table">
                     <thead>
                         <tr>
@@ -87,8 +96,9 @@
 
             <div id="sec2" class="col">
                 <div class="card">
-                    <img id="image" src="https://www.lifewire.com/thmb/dF-kkkDsTUWlGqtMTD_SSMWZgDY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-552756957-59dbd9cbd088c00010260068.jpg" class="card-img-top" alt="...">
-                    
+                    <img id="image" src="https://www.lifewire.com/thmb/dF-kkkDsTUWlGqtMTD_SSMWZgDY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-552756957-59dbd9cbd088c00010260068.jpg"
+                        class="card-img-top" alt="...">
+
                     <div class="card-body">
                         <h5 class="card-title">Events Near You</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural
@@ -99,17 +109,23 @@
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
 
     </div>
 
     <!-- Resources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="assets/js/moment.js"></script>
     <script src="assets/js/app.js"></script>
 
+    <!--  REMOVED FOR PERFORMANCE ISSUES
+    div id="openweathermap-widget-31"></div>
+    <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script>
+    <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 31,cityid: '2643743',appid: '36afb39cb4f0ee933b92b0443aa4a8af',units: 'metric',containerid: 'openweathermap-widget-31',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+     -->
 </body>
 
 
